@@ -2,11 +2,14 @@ import os
 from setuptools import setup, find_packages
 from setuptools.command.develop import develop
 from setuptools.command.install import install
-from pip.req import parse_requirements
+# from pip.req import parse_requirements
+from pip._internal.req import parse_requirements
 
 cwd = os.path.dirname(os.path.abspath(__file__))
-install_reqs = parse_requirements('requirements.txt')
-reqs = [str(ir.req) for ir in install_reqs]
+# install_reqs = parse_requirements('requirements.txt')
+# reqs = [str(ir.req) for ir in install_reqs]
+install_reqs = parse_requirements("requirements.txt", session=False)
+reqs = [str(ir.requirement) if hasattr(ir, "requirement") else str(ir) for ir in install_reqs]
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
     def run(self):

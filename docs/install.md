@@ -20,8 +20,17 @@ Alternatively, you may run manual installation:
 ```bash
 git clone https://github.com/myshell-ai/MeloTTS.git
 cd MeloTTS
-pip install -e .
-python -m unidic download
+# pip install -e .
+# python -m unidic download
+py -3.11 -m pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
+py -3.11 -m pip install -e . --use-pep517 --no-build-isolation
+py -3.11 -m unidic download
+
+# 下载语音模型
+huggingface-cli download myshell-ai/MeloTTS-Chinese --local-dir ./models/ZH
+huggingface-cli download myshell-ai/MeloTTS-English --local-dir ./models/EN
+huggingface-cli download myshell-ai/MeloTTS-English-v2 --local-dir ./models/EN_V2
+
 ```
 If you encountered issues in macOS install, try the [Docker Install](#docker-install)
 

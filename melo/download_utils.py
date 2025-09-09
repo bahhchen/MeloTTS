@@ -3,23 +3,23 @@ import os
 from . import utils
 from cached_path import cached_path
 DOWNLOAD_CKPT_URLS = {
-    'EN': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/EN/checkpoint.pth',
-    'EN_V2': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/EN_V2/checkpoint.pth',
-    'FR': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/FR/checkpoint.pth',
-    'JP': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/JP/checkpoint.pth',
-    'ES': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/ES/checkpoint.pth',
-    'ZH': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/ZH/checkpoint.pth',
-    'KR': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/KR/checkpoint.pth',
+    'EN': './models/EN/checkpoint.pth',
+    'EN_V2': './models/EN_V2/checkpoint.pth',
+    'FR': './models/FR/checkpoint.pth',
+    'JP': './models/JP/checkpoint.pth',
+    'ES': './models/ES/checkpoint.pth',
+    'ZH': './models/ZH/checkpoint.pth',
+    'KR': './models/KR/checkpoint.pth',
 }
 
 DOWNLOAD_CONFIG_URLS = {
-    'EN': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/EN/config.json',
-    'EN_V2': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/EN_V2/config.json',
-    'FR': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/FR/config.json',
-    'JP': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/JP/config.json',
-    'ES': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/ES/config.json',
-    'ZH': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/ZH/config.json',
-    'KR': 'https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/basespeakers/KR/config.json',
+    'EN': './models/EN/config.json',
+    'EN_V2': './models/EN_V2/config.json',
+    'FR': './models/FR/config.json',
+    'JP': './models/JP/config.json',
+    'ES': './models/ES/config.json',
+    'ZH': './models/ZH/config.json',
+    'KR': './models/KR/config.json',
 }
 
 def load_or_download_config(locale):
