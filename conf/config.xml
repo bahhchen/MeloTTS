@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<logger_level>info</logger_level>
+	<!--nginx参数-->
+	<nginx>
+		<port>19774</port>
+	</nginx>
+	<file_cache>
+		<interval>300</interval>
+		<files>20</files>
+		<size>1073741824</size>
+	</file_cache>
+</root>

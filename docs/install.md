@@ -31,6 +31,10 @@ huggingface-cli download myshell-ai/MeloTTS-Chinese --local-dir ./models/ZH
 huggingface-cli download myshell-ai/MeloTTS-English --local-dir ./models/EN
 huggingface-cli download myshell-ai/MeloTTS-English-v2 --local-dir ./models/EN_V2
 
+# 打包发布
+py -3.11 -m pip install pyinstaller
+C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Scripts\pyinstaller.exe server.spec
+
 ```
 If you encountered issues in macOS install, try the [Docker Install](#docker-install)
 
