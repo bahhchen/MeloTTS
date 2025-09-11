@@ -45,8 +45,11 @@ python3.11 -m pip install numpy==1.26.4 -i https://pypi.tuna.tsinghua.edu.cn/sim
 python3.11 -m pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
 python3.11 -m pip install -e . --use-pep517 --no-build-isolation
 
+# 需要翻墙才能下。。。可以用windows上拷过去 
 python3.11 -m unidic download
 python3.11 -m pip install "huggingface_hub[cli]"
+# nltk_data
+C:\Users\Administrator\AppData\Roaming\nltk_data to /home/soft/python311/nltk_data
 
 python3.11 -m pip install pyinstaller
 python3.11 -m PyInstaller server.spec

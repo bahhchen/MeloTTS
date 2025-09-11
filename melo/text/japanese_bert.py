@@ -18,7 +18,7 @@ def get_bert_feature(text, word2ph, device=None, model_id='tohoku-nlp/bert-base-
     if not device:
         device = "cuda"
     if model_id not in models:
-        model = AutoModelForMaskedLM.from_pretrained(model_id).to(
+        model = AutoModelForMaskedLM.from_pretrained(model_id_to_local_path(model_id)).to(
             device
         )
         models[model_id] = model

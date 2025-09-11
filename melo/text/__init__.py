@@ -51,4 +51,6 @@ def model_id_to_local_path(model_id: str) -> str:
     例如: 'hfl/chinese-roberta-wwm-ext-large'
     => 'models--hfl--chinese-roberta-wwm-ext-large'
     """
-    return os.path.join(models_base_path, "models--" + model_id.replace("/", "--"))
+    path = os.path.join(models_base_path, "models--" + model_id.replace("/", "--"))
+    # print(model_id, "To:", path)
+    return path
