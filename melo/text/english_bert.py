@@ -3,7 +3,8 @@ from transformers import AutoTokenizer, AutoModelForMaskedLM
 import sys
 
 model_id = 'bert-base-uncased'
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+from . import model_id_to_local_path
+tokenizer = AutoTokenizer.from_pretrained(model_id_to_local_path(model_id))
 model = None
 
 def get_bert_feature(text, word2ph, device=None):

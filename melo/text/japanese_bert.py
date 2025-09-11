@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 import sys
-
+from . import model_id_to_local_path
 
 models = {}
 tokenizers = {}
@@ -22,7 +22,7 @@ def get_bert_feature(text, word2ph, device=None, model_id='tohoku-nlp/bert-base-
             device
         )
         models[model_id] = model
-        tokenizer = AutoTokenizer.from_pretrained(model_id)
+        tokenizer = AutoTokenizer.from_pretrained(model_id_to_local_path(model_id))
         tokenizers[model_id] = tokenizer
     else:
         model = models[model_id]

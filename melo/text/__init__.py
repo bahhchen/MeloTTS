@@ -33,3 +33,22 @@ def get_bert(norm_text, word2ph, language, device):
                           'FR': fr_bert, 'SP': sp_bert, 'ES': sp_bert, "KR": kr_bert}
     bert = lang_bert_func_map[language](norm_text, word2ph, device)
     return bert
+
+
+import sys
+import os
+if getattr(sys, 'frozen', False):
+    # 打包成 exe
+    models_base_path = os.path.join(os.path.dirname(sys.executable), "models")
+else:
+    # 普通 python 脚本
+    models_base_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../models")
+
+
+def model_id_to_local_path(model_id: str) -> str:
+    """
+    将 Hugging Face 模型名转换成本地缓存目录名。
+    例如: 'hfl/chinese-roberta-wwm-ext-large'
+    => 'models--hfl--chinese-roberta-wwm-ext-large'
+    """
+    return os.path.join(models_base_path, "models--" + model_id.replace("/", "--"))

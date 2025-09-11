@@ -97,7 +97,8 @@ def _get_initials_finals(word):
     return initials, finals
 
 model_id = 'bert-base-multilingual-uncased'
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+from . import model_id_to_local_path
+tokenizer = AutoTokenizer.from_pretrained(model_id_to_local_path(model_id))
 def _g2p(segments):
     phones_list = []
     tones_list = []

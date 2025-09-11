@@ -63,7 +63,8 @@ def refine_syllables(syllables):
 
 # model_id = 'bert-base-uncased'
 model_id = 'dccuchile/bert-base-spanish-wwm-uncased'
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+from . import model_id_to_local_path
+tokenizer = AutoTokenizer.from_pretrained(model_id_to_local_path(model_id))
 
 def g2p(text, pad_start_end=True, tokenized=None):
     if tokenized is None:
